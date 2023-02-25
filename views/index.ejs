@@ -285,7 +285,7 @@
                         <td class=v-align-middle>${elem.nombre}</td>
                         <td class=v-align-middle>${elem.precio}</td>
                         <td class=v-align-middle>${elem.stock}</td>
-                        <td class=v-align-middle><img src=http://localhost:3000/uploads/${elem.img} class=img-fluid width='15%'></td>
+                        <td class=v-align-middle><img src=http://localhost:3000/uploads/${elem.img} class=img-fluid style=max-width:50px></td>
                         <td class=v-align-middle>
 
                           <form action="http://localhost:3000/api/v1/productos/eliminar/${elem.id}" method="POST" onsubmit="return confirmarEliminar()">        
