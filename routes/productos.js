@@ -5,13 +5,19 @@ const productoController =   require('../controllers/productos');
 // Multer (Subida de imágenes de los productos)
 const multer = require('multer'); 
 var img;
-const storage = multer.diskStorage({
-  destination: 'uploads/',
-  filename: function(req, file, callback) {
-    img = Date.now()+'-'+file.originalname; 
+const storage = multer.diskStorage({ 
+  destination: 'uploads/', 
+  filename: function(req, file, callback) { 
+    const img_nombre = file.originalname;                                                                                                        
+    // Reemplazamos los espacios en blanco del nombre de la imagen con guiones 
+    const img_nuevo_nombre = img_nombre.replace(/\s+/g,'-'); 
+    // Para evitar que los achivos se reemplazen entre si, le asignamos al nombre de la 
+    // imagen, la hora, tiempo, etc., actual 
+    const img = Date.now() + '-' + img_nuevo_nombre; 
+    
     callback(null, img);
-  }
-}); 
+  } 
+});
 var upload = multer({ storage: storage }) 
 
 // Ruta para listar todos los productos 
