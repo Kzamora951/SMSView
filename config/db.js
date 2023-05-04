@@ -6,7 +6,7 @@ const con = mysql.createConnection({
   host     : 'localhost', // Host
   user     : 'root',      // Usuario 
   password : '',          // Password  
-  database : 'crud-nodejs19-bootstrap5' // Base de datos 
+  database : 'crud' // Base de datos 
 });
 
 // Realizamos la conexión 

@@ -44,7 +44,7 @@ Producto.findAll = function (result) {
       console.log("error: ", err);
       result(null, err);
     }
-    else{
+    else{ 
       result(null, res);
     }
   });
