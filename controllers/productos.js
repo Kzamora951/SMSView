@@ -15,6 +15,7 @@ exports.findAll = function(req, res) {
 exports.create = function(req, res) { 
   // Mostramos un mensaje cuando los campos esten vacios 
   if(req.body.constructor === Object && Object.keys(req.body).length === 0){
+
     res.status(400).send({ error:true, message: 'Por favor proporciona todos los campos requeridos !' });
   }else{
 
@@ -25,6 +26,7 @@ exports.create = function(req, res) {
       stock: req.body.stock,
       img: req.file.filename // Nombre de la imagen 
     }; 
+    console.log(producto)
   
     const nuevo_producto = new Producto(producto);
     

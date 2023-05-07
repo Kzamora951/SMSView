@@ -18,7 +18,7 @@ Producto.create = function (newEmp, result) {
       result(err, null);
     }
     else{
-      console.log(res.insertId);
+      //console.log(res.insertId);
       result(null, res.insertId);
     }
   });

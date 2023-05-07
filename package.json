@@ -15,6 +15,7 @@
   "author": "Nube Colectiva",
   "license": "ISC",
   "dependencies": {
+    "@vonage/server-sdk": "^3.4.0",
     "body-parser": "^1.20.1",
     "bootstrap": "^5.2.3",
     "ejs": "^3.1.8",

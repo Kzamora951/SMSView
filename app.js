@@ -42,18 +42,27 @@ app.get('/leer', (req,res) => {
 app.get('/actualizar', (req,res) => {  
   res.render('actualizar')
 })
+app.get('/enviar', (req,res) => {  
+  res.render('./sms/crearSMS')
+})
+app.get('/enviado', (req,res) => {  
+  res.render('./sms/enviado')
+})
+
 
 // Ruta Productos 
 const ruta_productos = require('./routes/productos');
+const ruta_sms = require('./routes/sms');
 const con = require('./config/db');
 
 // Usamos un Middleware 
-app.use('/api/v1/productos', ruta_productos)
+app.use('/api/v1/productos', ruta_productos);
+app.use('/api/v2/sms', ruta_sms);
 
-// Directorio de las imágenes 
+// Directorio de las imágenes   
 app.use("/uploads",express.static(path.join(__dirname, "uploads")))
 
 // Escuchamos las peticiones en el puerto establecido 
 app.listen(port, () => {
-  console.log(`La Aplicación está funcionando en el puerto ${port}`);
+  console.log(`La Aplicación está funcionando en el puerto http://localhost:${port}/enviar`);
 });

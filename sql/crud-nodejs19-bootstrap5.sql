@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `productos` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
   `nombre` varchar(255) NOT NULL,
   `precio` varchar(255) NOT NULL,
   `stock` varchar(255) NOT NULL,
@@ -46,27 +46,4 @@ INSERT INTO `productos` (`id`, `nombre`, `precio`, `stock`, `img`, `created_at`,
 (2, 'Polo Azul', '25', '20', 'pa.jpg', '2023-02-23 23:59:01', '2023-02-24 23:58:06'),
 (3, 'Bicicleta Roja', '450', '25', 'br.jpg', '2023-02-24 00:20:37', '2023-02-24 22:37:10');
 
---
--- Índices para tablas volcadas
---
 
---
--- Indices de la tabla `productos`
---
-ALTER TABLE `productos`
-  ADD PRIMARY KEY (`id`);
-
---
--- AUTO_INCREMENT de las tablas volcadas
---
-
---
--- AUTO_INCREMENT de la tabla `productos`
---
-ALTER TABLE `productos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
-COMMIT;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
