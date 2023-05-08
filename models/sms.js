@@ -36,12 +36,13 @@ SMS.create = function (newEmp, result) {
 
 //funcion de consultar
 SMS.findAll = function (result) {
-    conexion.query("Select * from productos", function (err, res) {
+    conexion.query("Select * from sms", function (err, res) {
       if(err) {
         console.log("error: ", err);
         result(null, err);
       }
       else{ 
+        console.log(res)
         result(null, res);
       }
     });
@@ -58,6 +59,7 @@ SMS.findAll = function (result) {
     await vonage.sms.send({to, from, text})
         .then(resp => { console.log('Message sent successfully'); console.log(resp); })
         .catch(err => { console.log('There was an error sending the messages.'); console.error(err); });
+        console.log('--------------------------------------------');
 }
 
 module.exports = SMS;

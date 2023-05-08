@@ -26,6 +26,17 @@ SET time_zone = "+00:00";
 --
 -- Estructura de tabla para la tabla `productos`
 --
+DROP DATABASE IF EXISTS `crud`;
+CREATE DATABASE `crud`;
+USE `crud`;
+
+
+CREATE TABLE sms(
+  `id` int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  `nombre` varchar(255),
+  `telefono` varchar(255),
+   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+);
 
 CREATE TABLE `productos` (
   `id` int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
@@ -35,7 +46,7 @@ CREATE TABLE `productos` (
   `img` varchar(255) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+);
 
 --
 -- Volcado de datos para la tabla `productos`
@@ -45,5 +56,4 @@ INSERT INTO `productos` (`id`, `nombre`, `precio`, `stock`, `img`, `created_at`,
 (1, 'Zapatos Rojos Taco Mujer', '56', '30', 'zrm.jpg', '2023-02-23 23:35:20', '2023-02-23 23:35:20'),
 (2, 'Polo Azul', '25', '20', 'pa.jpg', '2023-02-23 23:59:01', '2023-02-24 23:58:06'),
 (3, 'Bicicleta Roja', '450', '25', 'br.jpg', '2023-02-24 00:20:37', '2023-02-24 22:37:10');
-
 

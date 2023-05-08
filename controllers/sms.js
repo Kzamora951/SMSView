@@ -25,11 +25,11 @@ exports.create = function (req, res) {
 }
 
 exports.findAll = function (req, res) {
-    SMS.findAll(function (err, producto) {
+    SMS.findAll(function (err, smsm) {
         if (err)
             res.send(err);
-        console.log('Datos:', producto);
-        res.status(200).send(producto)
+        // console.log('Datos:', smsm);
+        res.status(200).send(smsm)
     });
 };
 

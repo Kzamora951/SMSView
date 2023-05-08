@@ -1,7 +1,7 @@
 {
-  "name": "crud-nodejs19-bootstrap5",
+  "name": "EnvioSMS",
   "version": "1.0.0",
-  "description": "Como Crear un CRUD con Node JS 19.4.2 y Bootstrap 5",
+  "description": "",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -12,7 +12,7 @@
     "node",
     "js"
   ],
-  "author": "Nube Colectiva",
+  "author": "Intevo S.A.S",
   "license": "ISC",
   "dependencies": {
     "@vonage/server-sdk": "^3.4.0",

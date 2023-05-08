@@ -47,7 +47,14 @@ app.get('/enviar', (req,res) => {
 })
 app.get('/enviado', (req,res) => {  
   res.render('./sms/enviado')
+});
+app.get('/listar', (req,res) => {  
+  var message = req.flash('message');  
+  res.render('sms/listar', {
+    data: message, // Mensaje para cada tarea realizada 
+  })
 })
+
 
 
 // Ruta Productos 
